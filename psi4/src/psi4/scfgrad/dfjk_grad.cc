@@ -209,10 +209,10 @@ void DFJKGrad::compute_gradient() {
     // wK^x += 0.5 * (A|w|pq)^x (A|pq)
 
     // Printing
-    // gradients_["Coulomb"]->print();
-    // if (do_K_) {
-    //     gradients_["Exchange"]->print();
-    // }
+    gradients_["Coulomb"]->print();
+    if (do_K_) {
+        gradients_["Exchange"]->print();
+    }
     // if (do_wK_) {
     //     gradients_["Exchange,LR"]->print();
     // }
