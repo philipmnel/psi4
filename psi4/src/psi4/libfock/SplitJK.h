@@ -137,6 +137,10 @@ class PSI_API SplitJK {
     virtual std::string get_COSX_grid() {
         throw PSIEXCEPTION("SplitJK::get_COSX_grid was called, but COSX is not being used!");
     };
+
+    virtual void set_COSX_gradient(bool do_gradient) {
+        throw PSIEXCEPTION("SplitJK::set_COSX_gradient was called, but COSX is not being used!");
+    }
 };
 
 // ==> Start SplitJK Coulomb (J) Algorithms here <== //
@@ -312,6 +316,8 @@ class PSI_API COSK : public SplitJK {
     // setter/getter for the COSX grid used for this SCF iteration
     void set_COSX_grid(std::string current_grid) override { current_grid_ = current_grid; };
     std::string get_COSX_grid() override { return current_grid_; };
+
+    void set_COSX_gradient(bool do_gradient) override {do_gradient_ = do_gradient; }
 };
 
 }

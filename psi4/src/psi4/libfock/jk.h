@@ -1303,6 +1303,8 @@ class PSI_API CompositeJK : public JK {
     void set_COSX_grid(std::string current_grid) { return k_algo_->set_COSX_grid(current_grid); }
     std::string get_COSX_grid() { return k_algo_->get_COSX_grid(); }
 
+    void set_COSX_gradient(bool do_gradient) {return k_algo_->set_COSX_gradient(do_gradient); }
+
     /**
     * Print header information regarding JK
     * type on output file
